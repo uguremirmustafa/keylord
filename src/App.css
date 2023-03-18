@@ -1,0 +1,123 @@
+:root {
+  --rkw: 50px;
+  --dark: #3d3d3d;
+  --border: #2a2a2a;
+  --danger: #e35b59;
+  --secondary: #7c818f;
+  --spacing: 1px;
+  --bg: #1b1b1b;
+}
+.keyboard {
+  background-color: var(--bg);
+  width: 100%;
+  border-color: var(--border);
+  border-style: solid;
+  border-width: 2rem;
+  border-radius: 0.25rem;
+  padding: calc(var(--spacing) * 2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  box-shadow: 2px 4px 5px 3px rgba(1, 1, 1, 0.1);
+}
+.line {
+  display: flex;
+  column-gap: var(--spacing);
+}
+.k {
+  position: relative;
+  height: var(--rkw);
+  width: var(--rkw);
+  display: grid;
+  border: var(--spacing) solid var(--bg);
+  border-radius: 2px;
+  place-items: center;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: 'Ubuntu';
+  color: white;
+  z-index: 0;
+  filter: brightness(90%);
+  cursor: pointer;
+  box-shadow: inset -53px -54px 93px -17px rgba(0, 0, 0, 0.32);
+  transition: transform linear 0.1s;
+}
+.k::after {
+  z-index: 1;
+  content: '';
+  border-radius: 12px;
+  box-shadow: 2px 2px 1px 1px rgba(1, 1, 1, 0.1), 3px 3px 2px 0px rgba(1, 1, 1, 0.15);
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  position: absolute;
+  opacity: 50%;
+  filter: brightness(140%);
+}
+.k.active {
+  transform: scale(1.2) translateY(-8px);
+  transform-origin: bottom;
+  z-index: 10;
+  border-width: calc(var(--spacing) * 4);
+}
+.k.active.isSpace {
+  transform: scale(1.05, 1.2) translateY(-5px);
+}
+
+.danger,
+.danger::after {
+  background-color: var(--danger);
+}
+
+.rk,
+.rk::after {
+  background-color: var(--dark);
+}
+.sc,
+.sc::after {
+  background-color: var(--secondary);
+}
+
+.backspace,
+.esc,
+.enter,
+.control,
+.meta,
+.fn,
+.leftshift,
+.rightshift,
+.capslock,
+.alt,
+.tab,
+.context {
+  text-transform: lowercase;
+  font-size: 13px;
+}
+.backspace {
+  width: calc(var(--rkw) * 2);
+}
+.tab,
+.backslash {
+  width: calc(var(--rkw) * 1.5);
+}
+.capslock {
+  width: calc(var(--rkw) * 1.7);
+}
+.enter {
+  width: calc(var(--rkw) * 2.3 + var(--spacing));
+}
+.leftshift {
+  width: calc(var(--rkw) * 2.3 + var(--spacing));
+}
+.rightshift {
+  width: calc(var(--rkw) * 2.7 + var(--spacing));
+}
+.control,
+.alt,
+.meta,
+.fn,
+.context {
+  width: calc(var(--rkw) * 1.3);
+}
+.space {
+  flex-grow: 1;
+}
