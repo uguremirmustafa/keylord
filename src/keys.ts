@@ -77,6 +77,24 @@ export const firstLine: KeyboardKey[] = [
     code: 8,
     content: 'backspace',
   },
+  {
+    className: 'k ins rk',
+    code: 46,
+    content: 'ins',
+    keyCode: 'Insert',
+  },
+  {
+    className: 'k home rk',
+    code: 36,
+    content: 'home',
+    keyCode: 'Home',
+  },
+  {
+    className: 'k pu rk',
+    code: 33,
+    content: 'pu',
+    keyCode: 'PageUp',
+  },
 ];
 
 export const secondLine: KeyboardKey[] = [
@@ -150,6 +168,24 @@ export const secondLine: KeyboardKey[] = [
     className: 'k backslash sc',
     code: 220,
     content: '\\',
+  },
+  {
+    className: 'k danger del',
+    code: 46,
+    content: 'del',
+    keyCode: 'Delete',
+  },
+  {
+    className: 'k end rk',
+    code: 35,
+    content: 'end',
+    keyCode: 'End',
+  },
+  {
+    className: 'k pd rk',
+    code: 34,
+    content: 'pd',
+    keyCode: 'PageDown',
   },
 ];
 
@@ -285,6 +321,18 @@ export const forthLine: KeyboardKey[] = [
     content: '⇧ shift',
     keyCode: 'ShiftRight',
   },
+  {
+    className: 'k empty',
+    code: 0,
+    content: '',
+    keyCode: 'ShiftRight',
+  },
+  {
+    className: 'k rk arrow',
+    code: 16,
+    content: '↑',
+    keyCode: 'ArrowUp',
+  },
 ];
 
 export const fifthLine: KeyboardKey[] = [
@@ -334,5 +382,23 @@ export const fifthLine: KeyboardKey[] = [
     code: 39,
     content: 'ctrl',
     keyCode: 'ControlRight',
+  },
+  {
+    className: 'k rk arrow',
+    code: 37,
+    content: '←',
+    keyCode: 'ArrowLeft',
+  },
+  {
+    className: 'k rk arrow',
+    code: 40,
+    content: '↓',
+    keyCode: 'ArrowDown',
+  },
+  {
+    className: 'k rk arrow',
+    code: 39,
+    content: '→',
+    keyCode: 'ArrowRight',
   },
 ];

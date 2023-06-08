@@ -8,7 +8,11 @@ function App() {
   const keypress = useKeyPress();
 
   return (
-    <>
+    <div>
+      <div className="key_info">
+        <span className="label">{keypress.latestKey ? 'Key Code' : 'Press a key!'}</span>
+        <span className="content">{keypress.latestKey.code}</span>
+      </div>
       <div className="keyboard">
         <div className="line line1">
           {firstLine.map((x) => (
@@ -36,7 +40,10 @@ function App() {
           ))}
         </div>
       </div>
-    </>
+      <footer>
+        created by <a href="https://devugur.com">devugur</a>
+      </footer>
+    </div>
   );
 }
 
