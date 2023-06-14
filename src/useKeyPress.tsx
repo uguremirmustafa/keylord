@@ -4,7 +4,8 @@ export function useKeyPress() {
   const [pressedKey, setPressedKey] = useState<null | KeyboardEvent['key']>(null);
   const [keyCode, setKeyCode] = useState<null | KeyboardEvent['code']>(null);
   const latestKey = useRef<null | KeyboardEvent['key']>(null);
-  const latestKeyCode = useRef<null | KeyboardEvent['code']>(null);
+  const latestCode = useRef<null | KeyboardEvent['code']>(null);
+  const latestKeyCode = useRef<null | KeyboardEvent['keyCode']>(null);
 
   function downHandler(e: KeyboardEvent): void {
     if (e.key === 'Tab' || e.key === 'ContextMenu') {
@@ -15,12 +16,13 @@ export function useKeyPress() {
   }
   // If released key is our target key then set to false
   const upHandler = (e: KeyboardEvent): void => {
+    latestKeyCode.current = e.keyCode;
     setPressedKey((old) => {
       latestKey.current = old;
       return null;
     });
     setKeyCode((old) => {
-      latestKeyCode.current = old;
+      latestCode.current = old;
       return null;
     });
   };
@@ -37,6 +39,6 @@ export function useKeyPress() {
   return {
     pressedKey,
     keyCode,
-    latestKey: { code: latestKeyCode.current, key: latestKey.current },
+    latestKey: { code: latestCode.current, key: latestKey.current, keyCode: latestKeyCode.current },
   };
 }

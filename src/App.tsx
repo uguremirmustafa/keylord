@@ -11,7 +11,9 @@ function App() {
     <div>
       <div className="key_info">
         <span className="label">{keypress.latestKey ? 'Key Code' : 'Press a key!'}</span>
-        <span className="content">{keypress.latestKey.code}</span>
+        <span className="content">
+          {keypress.latestKey.code ?? '-'} / {keypress.latestKey.keyCode ?? '-'}
+        </span>
       </div>
       <div className="keyboard">
         <div className="line line1">
